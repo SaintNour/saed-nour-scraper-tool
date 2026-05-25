@@ -1,0 +1,29 @@
+{
+  "name": "analyzer",
+  "version": "1.0.0",
+  "description": "YouTube and social content review analyzer with sentiment insights and monitoring",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js",
+    "dev:all": "concurrently -k -n api,web -c green,cyan \"node index.js\" \"npm run dev --prefix web\"",
+    "build:web": "npm run build --prefix web",
+    "host": "npm run build:web && concurrently -k -n api,web -c green,cyan \"node index.js\" \"npm run preview --prefix web\"",
+    "test:local-sentiment": "node scripts/verify-local-sentiment.js",
+    "test:dashboard-intelligence": "node scripts/verify-dashboard-intelligence.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.14.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "openai": "^6.33.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

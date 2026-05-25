@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+web/.env
+web/.env.local
+
+# Local runtime data (created on first run)
+data/
+!data/.gitkeep
+
+# Build and cache
+web/.svelte-kit/
+web/build/
+web/.output/
+web/.vercel/
+web/.netlify/
+web/.wrangler/
+
+# Logs and OS
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Vite temp
+web/vite.config.js.timestamp-*
+web/vite.config.ts.timestamp-*
